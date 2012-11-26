@@ -4,7 +4,7 @@ This script allows you to save, resize, crop and output your images.
 
 ## Usage
 ### Include the class
-```
+```php
 include 'class.Image.php';
 ```
 ### You're done!
@@ -12,7 +12,7 @@ Now you can use any of its methods
 
 ## Examples
 ### 1- Resize image.jpg to 400x300 (cropping it), and save it to image.400x300.jpg
-```
+```php
 Image::from('image.jpg')
 	// width, height, crop
 	->resize_to(400, 300, true)
@@ -20,7 +20,7 @@ Image::from('image.jpg')
 ```
 
 ### 2- Resize image.png to the half of its width and height, and save it to image.half.png
-```
+```php
 $image = Image::from('image.png');
 
 $image
@@ -29,11 +29,11 @@ $image
 ```
 
 ### 3- Output a resized image without saving it
-```
+```php
 Image::from('image.jpg')->resize_to(100, 100, true)->output();
 ```
 If you want to manually set the `Content-Type` header, just pass false as argument to $output:
-```
+```php
 header("Content-Type: image/jpeg");
 Image::from('imagen.jpg')->output(false);
 ```
